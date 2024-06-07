@@ -10,10 +10,11 @@
 
 	<body>
 		<header class="header">
+			<div class="header-shadow-object"></div>
 			<div class="header-top">
-				<span class="logo">Ахвердова Анастасия</span>
+				<a href="/" class="logo">Ахвердова Анастасия</a>
 				<nav class="navigation">
-					<ul>
+					<ul class="menu">
 						<li class="menu-element">
 							<a href="" class="menu-element__link">Home</a></li>
 						<li class="menu-element">
@@ -32,12 +33,17 @@
 							<a href="" class="menu-element__link">Contact me</a></li>
 					</ul>
 				</nav>
-
-				<div class="header-center">
-					<h1 class="name">Ахвердова Анастасия</h1>
-					<p class="description">Привет! Меня зовут Анастасия, я бизнесс-леди, давайте знакомится!</p>
-				</div>
+				<span class="switcher">
+					<a href="">Rus/Eng</a></span>
 			</div>
+
+			<div class="header-center">
+				<h1 class="name">Ахвердова Анастасия</h1>
+				<p class="description">Привет! Меня зовут Анастасия, я бизнесс-леди, давайте знакомится!</p>
+			</div>
+			<svg class="emblem" width="512" height="512">
+				<use xlink:href="images/emblems.svg#horse"></use>
+			</svg>
 		</header>
 		<section class="about-me">
 			<div class="left">

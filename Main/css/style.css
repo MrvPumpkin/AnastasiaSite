@@ -1,0 +1,130 @@
+/* Browser utility */
+
+@font-face {
+    font-family: PT-Sans-Serif;
+    src: url(../fonts/PT-Sans-Web-Regular.tff) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+
+/* Link */
+
+a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: .7;
+}
+
+/* Body */
+
+body {
+    background-color: rgb(230,192,111);
+}
+
+/* Header */
+
+.header {
+    font-family: PT Sans;
+    font-weight: bold;
+    height: 122vh;
+    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+    background-size: cover;
+    filter: drop-shadow(0 0.4rem 0.2rem rgba(0, 0, 0, 0.5));
+
+}
+
+.header-shadow-object {
+    position: absolute;
+    z-index: -10;
+    margin-top: 10px;
+    height: 120vh;
+    width: 100%;
+    background-color: rgb(198,161,135);
+    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
+    background-size: cover;
+}
+
+.header-top {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: rgb(230,192,111);
+    box-shadow: 0px 5px 5px 10px rgba(0, 0, 0, 0.2), 0px -20px 1px -10px rgba(0, 0, 0, 0.1) inset;
+}
+
+.header-top a{
+    color: rgb(79,76,71);
+}
+
+.header-center {
+    height: 80px;
+    margin-top: 40vh;
+    z-index: 1;
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.name {
+    font-size: 30px;
+    color: rgb(230,192,111);
+    display: inline-block;
+}
+
+.description {
+    font-size: 15px;
+    color: rgb(223,216,206);
+    display: inline-block;
+}
+
+.emblem {
+    height: 50vh;
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: -25vh;
+    text-align: center;
+    filter: drop-shadow(5px 5px 5px rgb(0 0 0 / 0.5));
+    fill: rgb(0, 0, 0, 0.4);
+    flex-direction: column;
+    z-index: -1;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-element {
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.menu-element:last-child {
+    margin-right: 0;
+}
+
+.switcher {
+    font-size: 20px;
+}
