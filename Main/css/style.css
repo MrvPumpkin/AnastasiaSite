@@ -1,10 +1,18 @@
 /* Browser utility */
 
-@font-face {
-    font-family: PT-Sans-Serif;
-    src: url(../fonts/PT-Sans-Web-Regular.tff) format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@import url(https://myfonts.ru/myfonts?fonts=french-kiss-kg-script);
+
+:root {
+    --color-pink: rgb(234, 138, 138);
+    --color-pink-light: rgb(255, 190, 190);
+    --color-peach: rgb(235, 213, 213);
+    --color-gray2: rgb(242, 242, 242);
+    --color-pastel-brown: rgb(104, 84, 84);
+    --default-font-size: 16px;
+}
+
+html {
+    font-size: var(--default-font-size);
 }
 
 ::-webkit-scrollbar {
@@ -26,18 +34,15 @@ a:hover {
 /* Body */
 
 body {
-    background-color: rgb(230,192,111);
+    background-color: var(--color-pink-light);
 }
 
 /* Header */
 
 .header {
-    font-family: PT Sans;
     font-weight: bold;
     height: 122vh;
-    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
     background-size: cover;
-    filter: drop-shadow(0 0.4rem 0.2rem rgba(0, 0, 0, 0.5));
 
 }
 
@@ -47,24 +52,24 @@ body {
     margin-top: 10px;
     height: 120vh;
     width: 100%;
-    background-color: rgb(198,161,135);
+    background-color: var(--color-pink);
     clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0% 90%, 0 0);
     background-size: cover;
 }
 
 .header-top {
-    height: 70px;
+    height: 120px;
 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
-    background-color: rgb(230,192,111);
+    background-color: var(--color-pastel-brown);
     box-shadow: 0px 5px 5px 10px rgba(0, 0, 0, 0.2), 0px -20px 1px -10px rgba(0, 0, 0, 0.1) inset;
 }
 
 .header-top a{
-    color: rgb(79,76,71);
+    color: var(--color-pink);
 }
 
 .header-center {
@@ -78,18 +83,19 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-color: rgb(0, 0, 0, 0.4);
+    background-color: var(--color-pastel-brown);
+    opacity: .7;
 }
 
 .name {
     font-size: 30px;
-    color: rgb(230,192,111);
+    color: var(--color-peach);
     display: inline-block;
 }
 
 .description {
     font-size: 15px;
-    color: rgb(223,216,206);
+    color: var(--color-peach);
     display: inline-block;
 }
 
@@ -101,13 +107,14 @@ body {
     margin-top: -25vh;
     text-align: center;
     filter: drop-shadow(5px 5px 5px rgb(0 0 0 / 0.5));
-    fill: rgb(0, 0, 0, 0.4);
+    fill: rgb(235, 213, 213);
     flex-direction: column;
     z-index: -1;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 46px;
+    font-family: 'French Kiss KG script', arial;
 }
 
 .menu {
@@ -126,5 +133,98 @@ body {
 }
 
 .switcher {
+    position: relative;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    background-color: var(--color-pink);
+    border-radius: 30px;
+    opacity: 1;
+
+    transition: opacity .25 ease;
+
+    cursor: pointer;
+}
+
+.switcher:hover {
+    opacity: 0.9;
+}
+
+.switcher:before {
+    content: "";
+    width: 50px;
+    height: 35px;
+    background-color: var(--color-peach);
+    position: absolute;
+    z-index: 1;
+    border-radius: 30px;
+    left: 0;
+
+    transition: left .25s ease-in-out;
+}
+
+#lang:checked + .switcher:before {
+    left: 50px;
+}
+
+#lang:checked + .switcher span:first-child {
+    color: var(--color-peach);
+    z-index: 2;
+}
+
+#lang:checked + .switcher span:last-child {
+    color: var(--color-pink);
+    z-index: 2;
+}
+
+.switcher span {
+    z-index: 2;
+
+    position: relative;
+    flex: 1 1 50%;
+    text-align: center;
+    color: var(--color-peach);
+    filter: drop-shadow( 1px 1px 1px rgb(0 0 0 / 0.5));
+
+    transition: color .25s ease-in-out;
+}
+
+.switcher span:first-child {
+    color: var(--color-pink);
+}
+
+#lang {
+    display: none;
+}
+
+.about-me {
+    display: flex;
+    margin-top: 5vh;
+    margin-inline: 5vw;
+
+    font-family: PT Sans;
+    font-weight: bold;
+}
+
+.about-me .right {
+    margin-left: 20px;
+}
+
+.about-me h2 {
+    font-size: 36px;
+}
+
+.about-me__quote {
+    color: rgb(0 0 0 / 0.5);
+}
+
+/* Photo */
+
+.about-me__image {
+    width: 35vw;
+    border-radius: 2vw;
+    filter: drop-shadow(4px 4px 1px rgb(0, 0, 0, 0.5));
 }
